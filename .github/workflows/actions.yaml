@@ -55,10 +55,10 @@ jobs:
         working-directory: ./iac
         run: terraform apply -auto-approve -no-color
 
-      - name: Update AWS ECS service
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-        with:
-          task-definition: my-task-definition
-          service: my-ecs-service
-          cluster: my-ecs-cluster
-          wait-for-service-stability: true
+      # - name: Update AWS ECS service
+      #   uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+      #   with:
+      #     task-definition: my-task-definition
+      #     service: my-ecs-service
+      #     cluster: my-ecs-cluster
+      #     wait-for-service-stability: true
