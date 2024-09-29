@@ -1,0 +1,8 @@
+Experienced AWS Cloud specializing in Infrastructure as Code (IAC) with a focus on Terraform. 
+Proficient in AWS services such as EC2, RDS, EKS, ECS (Elastic Container Service), API Gateway, S3, CloudWatch, IAM, VPC, Lambda, and EKS (Elastic Kubernetes Service). 
+Skilled in Docker, creating Docker files, pushing images to repositories like Dockerhub or ECR, and containerizing applications. 
+Experienced in managing Docker containers with AWS ECS for scalable and reliable application deployment. 
+Utilized PCF for small applications and automated build processes using Jenkins or GitHub Actions (GAH) to establish streamlined CI/CD pipelines. 
+Embraced Infrastructure as Code principles to define cloud resources declaratively with Terraform, ensuring version control, collaboration, and consistent deployments. 
+Worked on migration and modernization projects, including legacy system migrations to AWS cloud environments. 
+Proficient in creating detailed Low-Level Designs (LLD) and IAC scripts to maintain infrastructure scalability and consistency.
