@@ -4,10 +4,10 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket         = "backend-s3-my-profile-pjt"
-    key            = "statefile.tfstate"
-    region         = "us-east-1"
-    encrypt        = true
+    bucket  = "backend-s3-my-profile-pjt"
+    key     = "statefile.tfstate"
+    region  = "us-east-1"
+    encrypt = true
   }
 }
 
@@ -17,12 +17,12 @@ resource "aws_ecs_cluster" "ecs_cluster" {
 }
 
 resource "aws_ecs_task_definition" "task_definition" {
-  family                = "my-task-definition"
+  family = "my-task-definition"
   container_definitions = jsonencode([
     {
       name      = "my-container"
-      image      = "docker.io/sivagane/my-profile-web-site:latest"
-      cpu        = 10
+      image     = "docker.io/sivagane/my-profile-web-site:latest"
+      cpu       = 10
       essential = true
       portMappings = [
         {
@@ -45,11 +45,11 @@ resource "aws_ecs_service" "ecs_service" {
   cluster         = aws_ecs_cluster.ecs_cluster.id
   task_definition = aws_ecs_task_definition.task_definition.arn
   desired_count   = 1
-  launch_type      = "FARGATE"
+  launch_type     = "FARGATE"
 
   network_configuration {
-    security_groups = ["sg-0e306d4c54dd7a765"]
-    subnets         = ["subnet-0ca1cb74c88b623ea", "subnet-0ff00305269ac0f85"]
+    security_groups  = ["sg-0e306d4c54dd7a765"]
+    subnets          = ["subnet-0ca1cb74c88b623ea", "subnet-0ff00305269ac0f85"]
     assign_public_ip = true
   }
 
