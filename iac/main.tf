@@ -2,6 +2,16 @@ provider "aws" {
   region = "us-east-1"
 }
 
+terraform {
+  backend "s3" {
+    bucket         = "backend-s3-my-profile-pjt"
+    key            = "statefile.tfstate"
+    region         = "us-east-1"
+    encrypt        = true
+  }
+}
+
+
 resource "aws_ecs_cluster" "ecs_cluster" {
   name = "my-ecs-cluster"
 }
