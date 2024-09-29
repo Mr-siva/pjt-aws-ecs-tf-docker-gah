@@ -5,7 +5,7 @@ on:
     branches:
       - main
 
-      
+
 jobs:
   deploy:
     name: Deploy
@@ -55,11 +55,6 @@ jobs:
         id: apply
         working-directory: ./iac
         run: terraform plan -auto-approve -no-color
-
-      - name: Terraform Apply
-        id: apply
-        working-directory: ./iac
-        run: terraform apply -auto-approve -no-color
 
       # - name: Update AWS ECS service
       #   uses: aws-actions/amazon-ecs-deploy-task-definition@v1
