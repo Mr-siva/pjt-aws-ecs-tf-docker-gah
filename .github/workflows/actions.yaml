@@ -51,6 +51,7 @@ jobs:
         run: terraform validate -no-color
 
       - name: Terraform Plan
+        working-directory: ./iac
         id: plan
         run: terraform plan -no-color
         if: github.event_name == 'pull_request'
