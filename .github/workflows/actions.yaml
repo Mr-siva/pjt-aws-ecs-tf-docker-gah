@@ -51,6 +51,11 @@ jobs:
         working-directory: ./iac
         run: terraform validate -no-color
 
+      - name: Terraform plan
+        id: plan
+        working-directory: ./iac
+        run: terraform plan -auto-approve -no-color
+
       - name: Terraform Apply
         id: apply
         working-directory: ./iac
